@@ -1,0 +1,87 @@
+﻿<Window x:Class="MyPaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyPaint"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        KeyUp="MainWindow_OnKeyUp">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="Undo"
+                        Executed="UndoCommandBinding_Executed"/>
+        <CommandBinding Command="Redo"
+                        Executed="RedoCommandBinding_Executed"/>
+    </Window.CommandBindings>
+    
+    <Window.InputBindings>
+        <KeyBinding Key="Z" Modifiers="Control" Command="{Binding UndoCommand}" />
+        <KeyBinding Key="Y" Modifiers="Control" Command="{Binding Redo}"/>
+    </Window.InputBindings>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="rowFileAndView"
+                           Height="20"/>
+            <RowDefinition x:Name="rowTools"
+                           Height="70"/>
+            <RowDefinition x:Name="rowDrawArea"
+                           Height="*"/>
+            <!-- <RowDefinition -->
+            <!--     Height="20"/> -->
+        </Grid.RowDefinitions>
+        
+        <Menu Grid.Row="0" DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="menuOpenFile" Header="Открыть"/>
+                <MenuItem x:Name="menuSaveFile" Header="Сохранить"/>
+                <MenuItem x:Name="menuSaveAs" Header="Сохранить как"/>
+                <Separator/>
+                <MenuItem x:Name="menuAddPlugin" Header="Добавить плагин"/>
+                <Separator/>
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+            <MenuItem Header="Главная"/>
+            <MenuItem Header="Вид"/>
+        </Menu>
+        
+        <StackPanel
+            x:Name="stckMainTools"
+            ZIndex="1"
+            Grid.Row="1"
+            Orientation="Horizontal">
+            <UniformGrid x:Name="uniColors" Columns="5" Rows="3" />
+            <UniformGrid x:Name="uniShapes" Columns="4" Rows="3"/>
+
+            <Button
+                x:Name="btnThicknesses"
+                Width="30"
+                Click="BtnThicknesses_OnClick" />
+
+            <Popup x:Name="popupThicknesses"
+                   PlacementTarget="{Binding ElementName=btnThicknesses}"
+                   Placement="Bottom"
+                   StaysOpen="False"
+                   PopupAnimation="Slide" />
+
+            <Button
+                x:Name="btnUndo"
+                Click="BtnUndo_OnClick"
+                Content="ctrl z" />
+            <Button
+                x:Name="btnRedo"
+                Click="BtnRedo_OnClick"
+                Content="ctrl y" />
+
+        </StackPanel>
+
+        <Canvas
+            x:Name="canvasForDrawing"
+            ZIndex="0"
+            Grid.Row="2"
+            Background="Transparent"
+            ClipToBounds="True">
+        </Canvas>
+    </Grid>
+</Window>
