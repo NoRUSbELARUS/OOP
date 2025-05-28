@@ -8,9 +8,9 @@ namespace MyPaint;
 
 public class PolylineDefault : ShapeAllKinds
 {
-    public Point[] points;
+    private Point[] points;
 
-    public int strokeThickness;
+    private int strokeThickness;
 
     [JsonIgnore]
     public int StrokeThickness
@@ -23,7 +23,7 @@ public class PolylineDefault : ShapeAllKinds
         }
     }
 
-    public Color strokeColor;
+    private Color strokeColor;
 
     [JsonIgnore]
     public Color StrokeColor

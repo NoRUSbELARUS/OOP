@@ -16,7 +16,7 @@ public class DefaultTools
         InitializeShapes();
     }
 
-    void InitializeColors()
+    private void InitializeColors()
     {
         ColorsTools.Add(Colors.Black);
         ColorsTools.Add(Colors.White);
@@ -32,7 +32,7 @@ public class DefaultTools
         ColorsTools.Add(Colors.Black);
     }
 
-    void InitializeThicknesses()
+    private void InitializeThicknesses()
     {
         ThicknessesTools.Add(2);
         ThicknessesTools.Add(4);
@@ -42,7 +42,7 @@ public class DefaultTools
         ThicknessesTools.Sort();
     }
 
-    void InitializeShapes()
+    private void InitializeShapes()
     {
         ShapesTools = Assembly.GetExecutingAssembly()
             .GetTypes()

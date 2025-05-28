@@ -8,7 +8,7 @@ namespace MyPaint;
 
 public class LineDefault : ShapeAllKinds
 {
-    public double x1, y1, x2, y2;
+    private double x1, y1, x2, y2;
 
     [JsonIgnore]
     public double X1
@@ -59,7 +59,7 @@ public class LineDefault : ShapeAllKinds
         }
     }
 
-    public int strokeThickness;
+    private int strokeThickness;
 
     [JsonIgnore]
     public int StrokeThickness
@@ -72,7 +72,7 @@ public class LineDefault : ShapeAllKinds
         }
     }
 
-    public Color strokeColor;
+    private Color strokeColor;
 
     [JsonIgnore]
     public Color StrokeColor

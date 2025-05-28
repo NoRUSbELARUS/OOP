@@ -8,9 +8,9 @@ namespace MyPaint;
 
 public class PolygonDefault : ShapeAllKinds
 {
-    public Point[] points;
+    private Point[] points;
 
-    public int strokeThickness;
+    private int strokeThickness;
 
     [JsonIgnore]
     public int StrokeThickness
@@ -23,7 +23,7 @@ public class PolygonDefault : ShapeAllKinds
         }
     }
 
-    public Color fillColor, strokeColor;
+    private Color fillColor, strokeColor;
 
     [JsonIgnore]
     public Color FillColor

@@ -2,7 +2,7 @@
 
 public class Plugin
 {
-    private void AddPlugin()
+    private protected void AddPlugin()
     {
         // 
         
