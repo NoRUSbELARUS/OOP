@@ -10,14 +10,14 @@ public class EllipseDefault : ShapeAllKinds
     private double x1, y1, x2, y2;
 
     [JsonIgnore]
-    public double X1
+    private double X1
     {
         get { return x1; }
         set { x1 = value; }
     }
 
     [JsonIgnore]
-    public double X2
+    private double X2
     {
         get { return x2; }
         set
@@ -29,14 +29,14 @@ public class EllipseDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public double Y1
+    private double Y1
     {
         get { return y1; }
         set { y1 = value; }
     }
 
     [JsonIgnore]
-    public double Y2
+    private double Y2
     {
         get { return y2; }
         set
@@ -50,7 +50,7 @@ public class EllipseDefault : ShapeAllKinds
     private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -63,7 +63,7 @@ public class EllipseDefault : ShapeAllKinds
     private Color fillColor, strokeColor;
 
     [JsonIgnore]
-    public Color FillColor
+    private Color FillColor
     {
         get { return fillColor; }
         set
@@ -74,7 +74,7 @@ public class EllipseDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public Color StrokeColor
+    private Color StrokeColor
     {
         get { return strokeColor; }
         set

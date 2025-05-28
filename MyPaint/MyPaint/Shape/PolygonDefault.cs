@@ -13,7 +13,7 @@ public class PolygonDefault : ShapeAllKinds
     private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -26,7 +26,7 @@ public class PolygonDefault : ShapeAllKinds
     private Color fillColor, strokeColor;
 
     [JsonIgnore]
-    public Color FillColor
+    private Color FillColor
     {
         get { return fillColor; }
         set
@@ -37,7 +37,7 @@ public class PolygonDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public Color StrokeColor
+    private Color StrokeColor
     {
         get { return strokeColor; }
         set

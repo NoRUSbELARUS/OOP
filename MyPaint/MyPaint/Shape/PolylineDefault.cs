@@ -13,7 +13,7 @@ public class PolylineDefault : ShapeAllKinds
     private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -26,7 +26,7 @@ public class PolylineDefault : ShapeAllKinds
     private Color strokeColor;
 
     [JsonIgnore]
-    public Color StrokeColor
+    private Color StrokeColor
     {
         get { return strokeColor; }
         set
@@ -67,17 +67,6 @@ public class PolylineDefault : ShapeAllKinds
             },
         };
     }
-
-    // public override DTOShape GetDTOShape()
-    // {
-    //     return new DTOShape()
-    //     {
-    //         Points = (FigurePtr as Polyline).Points.ToArray(),
-    //         StrokeColor = StrokeColor,
-    //         Type = this.GetType()
-    //     };
-    // }
-
 
     public override void Draw(Canvas canvas)
     {

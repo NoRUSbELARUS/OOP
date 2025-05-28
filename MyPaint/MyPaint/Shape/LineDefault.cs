@@ -22,7 +22,7 @@ public class LineDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public double X2
+    private double X2
     {
         get { return x2; }
         set
@@ -62,7 +62,7 @@ public class LineDefault : ShapeAllKinds
     private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -75,7 +75,7 @@ public class LineDefault : ShapeAllKinds
     private Color strokeColor;
 
     [JsonIgnore]
-    public Color StrokeColor
+    private Color StrokeColor
     {
         get { return strokeColor; }
         set
