@@ -4,11 +4,11 @@ using System.Windows;
 
 namespace MyPaint;
 
-public class SelectedTool
+internal class SelectedTool
 {
     private Border? currSelectedFillColor;
 
-    public Border? CurrSelectedFillColor
+    internal Border? CurrSelectedFillColor
     {
         get => currSelectedFillColor;
         set
@@ -22,7 +22,7 @@ public class SelectedTool
 
     private Border? currSelectedStrokeColor = null;
 
-    public Border? CurrSelectedStrokeColor
+    internal Border? CurrSelectedStrokeColor
     {
         get => currSelectedStrokeColor;
         set
@@ -35,7 +35,7 @@ public class SelectedTool
 
     private Button? currSelectedShape = null;
 
-    public Button? CurrSelectedShape
+    internal Button? CurrSelectedShape
     {
         get => currSelectedShape;
         set

@@ -5,7 +5,7 @@ using System.Windows.Shapes;
 
 namespace MyPaint;
 
-public class EllipseDefault : ShapeAllKinds
+internal class EllipseDefault : ShapeAllKinds
 {
     private double x1, y1, x2, y2;
 

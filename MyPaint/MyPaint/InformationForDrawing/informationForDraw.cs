@@ -13,17 +13,17 @@ public class InformationForDraw
 
     public Color FillColor;
     public Color StrokeColor;
-    
+
     public int Thickness = 1;
-    
+
     public static bool isDrawed = false;
     public static bool IsPressed = false;
     public static bool ShiftWasPressed = false;
-    
+
     public static int ColorNumber = 1;
 
     public static Type CurrShapeType = typeof(EllipseDefault);
-    
+
     public static List<ShapeAllKinds> ShapesOnCanvas = new List<ShapeAllKinds>();
     public static Canvas? CanvasForDrawing;
 

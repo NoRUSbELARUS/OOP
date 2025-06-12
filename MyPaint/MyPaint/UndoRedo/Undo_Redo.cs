@@ -2,14 +2,14 @@
 
 namespace MyPaint;
 
-public class Undo_Redo
+internal class Undo_Redo
 {
     public Stack<Shape> ShapeUndoStack = new Stack<Shape>();
-    public Stack<ShapeAllKinds> ShapeAllKinds_UndoStack = new Stack<ShapeAllKinds>();
-    public InformationForDraw informationForDraw { get; set; }
-    
-    
-    public void Redo()
+    private Stack<ShapeAllKinds> ShapeAllKinds_UndoStack = new Stack<ShapeAllKinds>();
+    internal InformationForDraw informationForDraw { get; set; }
+
+
+    internal void Redo()
     {
         if (ShapeUndoStack.Count > 0)
         {
@@ -18,7 +18,7 @@ public class Undo_Redo
         }
     }
 
-    public void Undo()
+    internal void Undo()
     {
         if (InformationForDraw.CanvasForDrawing.Children.Count > 0)
         {

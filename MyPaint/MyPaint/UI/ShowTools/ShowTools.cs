@@ -5,14 +5,14 @@ using System.Windows.Media;
 
 namespace MyPaint;
 
-public class ShowTools
+internal class ShowTools
 {
-    public InformationForDraw informationForDraw;
-    public SelectItemMethods selectItemMethods;
-    public SelectedTool selectedTool;
-    public DefaultTools defaultTools;
-    
-    public void AddColorsToTools()
+    internal InformationForDraw informationForDraw;
+    internal SelectItemMethods selectItemMethods;
+    internal SelectedTool selectedTool;
+    internal DefaultTools defaultTools;
+
+    internal void AddColorsToTools()
     {
         for (int i = 0; i < defaultTools.ColorsTools.Count(); i++)
             AddOneColorToTools(i);
@@ -80,13 +80,13 @@ public class ShowTools
         InformationForDraw.UniColors.Children.Add(_borderForStroke);
     }
 
-    public void AddShapesToTools()
+    internal void AddShapesToTools()
     {
         for (int i = 0; i < defaultTools.ShapesTools.Count; i++)
             AddOneShapeToTools(i);
     }
 
-    public void AddOneShapeToTools(int index)
+    internal void AddOneShapeToTools(int index)
     {
         Button _btnShape = new Button()
         {
@@ -109,7 +109,7 @@ public class ShowTools
         InformationForDraw.UniShapes.Children.Add(_btnShape);
     }
 
-    public void AddThicknessesToTools()
+    internal void AddThicknessesToTools()
     {
         StackPanel _ = new StackPanel();
 

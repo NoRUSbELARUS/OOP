@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace MyPaint;
 
-public class RectangleDefault : ShapeAllKinds
+internal class RectangleDefault : ShapeAllKinds
 {
     private double x1, y1, x2, y2;
     
@@ -51,7 +51,7 @@ public class RectangleDefault : ShapeAllKinds
     private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -106,25 +106,6 @@ public class RectangleDefault : ShapeAllKinds
             IsHitTestVisible = false,
         };
     }
-
-
-    // public override DTOShape GetDTOShape()
-    // {
-    //     DTOShape dtoShape = new DTOShape()
-    //     {
-    //         FillColor = FillColor,
-    //         Type = this.GetType(),
-    //         StrokeColor = StrokeColor,
-    //         Points = new[] { new Point(X1, Y1), new Point(X2, Y2) },
-    //         StrokeThickness = StrokeThickness
-    //     };
-    //
-    //     return dtoShape;
-    // }
-
-    // public override void DrawOnCanvas(Canvas canvas, DTOShape dtoshape)
-    // {
-    // }
 
     public override void Draw(Canvas canvas)
     {

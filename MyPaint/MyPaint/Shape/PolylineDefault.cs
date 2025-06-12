@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace MyPaint;
 
-public class PolylineDefault : ShapeAllKinds
+internal class PolylineDefault : ShapeAllKinds
 {
     private Point[] points;
 

@@ -10,14 +10,14 @@ namespace MyPaint
 {
     public partial class MainWindow : Window
     {
-        public InformationForDraw informationForDraw;
-        public ShowTools showTools;
-        public Undo_Redo undoRedo;
-        public SelectedTool selectedTool;
-        public SelectItemMethods selectItemMethods;
-        public DefaultTools defaultTools;
+        internal InformationForDraw informationForDraw;
+        internal ShowTools showTools;
+        internal Undo_Redo undoRedo;
+        internal SelectedTool selectedTool;
+        internal SelectItemMethods selectItemMethods;
+        internal DefaultTools defaultTools;
 
-        public List<ShapeAllKinds> ShapesOnCanvas = new List<ShapeAllKinds>();
+        internal List<ShapeAllKinds> ShapesOnCanvas = new List<ShapeAllKinds>();
 
         public MainWindow()
         {
@@ -68,7 +68,7 @@ namespace MyPaint
             menuAddPlugin.Click += MenuAddPlugin_AddPlugin;
         }
 
-        public void CanvasForDrawing_OnMouseDown(object sender, MouseButtonEventArgs e)
+        private void CanvasForDrawing_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             (sender as Canvas).CaptureMouse();
             InformationForDraw.IsPressed = true;
@@ -77,7 +77,7 @@ namespace MyPaint
             informationForDraw.yEnter = e.GetPosition(sender as Canvas).Y;
         }
 
-        public void CanvasForDrawing_OnMouseMove(object sender, MouseEventArgs e)
+        private void CanvasForDrawing_OnMouseMove(object sender, MouseEventArgs e)
         {
             if (InformationForDraw.IsPressed)
             {
@@ -100,7 +100,7 @@ namespace MyPaint
             }
         }
 
-        public void CanvasForDrawing_OnMouseUp(object sender, MouseButtonEventArgs e)
+        private void CanvasForDrawing_OnMouseUp(object sender, MouseButtonEventArgs e)
         {
             InformationForDraw.isDrawed = false;
             InformationForDraw.IsPressed = false;

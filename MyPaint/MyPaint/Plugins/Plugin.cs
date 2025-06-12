@@ -1,6 +1,6 @@
 ﻿namespace MyPaint;
 
-public class Plugin
+internal class Plugin
 {
     private protected void AddPlugin()
     {

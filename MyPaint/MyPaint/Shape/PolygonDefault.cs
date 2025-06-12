@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace MyPaint;
 
-public class PolygonDefault : ShapeAllKinds
+internal class PolygonDefault : ShapeAllKinds
 {
     private Point[] points;
 

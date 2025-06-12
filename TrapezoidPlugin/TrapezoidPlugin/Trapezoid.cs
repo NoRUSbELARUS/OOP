@@ -8,12 +8,12 @@ using MyPaint;
 
 public class Trapezoid : ShapeAllKinds
 {
-    public Point[] points;
+    private Point[] points;
 
-    public int strokeThickness;
+    private int strokeThickness;
 
     [JsonIgnore]
-    public int StrokeThickness
+    private int StrokeThickness
     {
         get { return strokeThickness; }
         set
@@ -23,10 +23,10 @@ public class Trapezoid : ShapeAllKinds
         }
     }
 
-    public Color fillColor, strokeColor;
+    private Color fillColor, strokeColor;
 
     [JsonIgnore]
-    public Color FillColor
+    private Color FillColor
     {
         get { return fillColor; }
         set
@@ -37,7 +37,7 @@ public class Trapezoid : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public Color StrokeColor
+    private Color StrokeColor
     {
         get { return strokeColor; }
         set
@@ -85,7 +85,6 @@ public class Trapezoid : ShapeAllKinds
             IsHitTestVisible = false,
         };
         
-        // отрисовОчка
         {
             (FigurePtr as Polygon).Points = new PointCollection(points);
             FillColor = fillColor;

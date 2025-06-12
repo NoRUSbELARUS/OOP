@@ -3,13 +3,13 @@ using System.Reflection;
 
 namespace MyPaint;
 
-public class DefaultTools
+internal class DefaultTools
 {
-    public List<Color> ColorsTools = new List<Color>();
-    public List<int> ThicknessesTools = new List<int>();
-    public List<Type> ShapesTools = new List<Type>();
+    internal List<Color> ColorsTools = new List<Color>();
+    internal List<int> ThicknessesTools = new List<int>();
+    internal List<Type> ShapesTools = new List<Type>();
 
-    public DefaultTools()
+    internal DefaultTools()
     {
         InitializeColors();
         InitializeThicknesses();

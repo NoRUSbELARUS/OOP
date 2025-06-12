@@ -6,12 +6,12 @@ using Newtonsoft.Json;
 
 namespace MyPaint;
 
-public class LineDefault : ShapeAllKinds
+internal class LineDefault : ShapeAllKinds
 {
     private double x1, y1, x2, y2;
 
     [JsonIgnore]
-    public double X1
+    private double X1
     {
         get { return x1; }
         set
@@ -35,7 +35,7 @@ public class LineDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public double Y1
+    private double Y1
     {
         get { return y1; }
         set
@@ -46,7 +46,7 @@ public class LineDefault : ShapeAllKinds
     }
 
     [JsonIgnore]
-    public double Y2
+    private double Y2
     {
         get { return y2; }
         set
