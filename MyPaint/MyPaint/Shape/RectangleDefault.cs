@@ -8,6 +8,7 @@ namespace MyPaint;
 
 internal class RectangleDefault : ShapeAllKinds
 {
+    [JsonProperty]
     private double x1, y1, x2, y2;
     
     [JsonIgnore]
@@ -48,6 +49,7 @@ internal class RectangleDefault : ShapeAllKinds
         }
     }
 
+    [JsonProperty]
     private int strokeThickness;
 
     [JsonIgnore]
@@ -61,6 +63,7 @@ internal class RectangleDefault : ShapeAllKinds
         }
     }
 
+    [JsonProperty]
     private Color fillColor, strokeColor;
 
     [JsonIgnore]

@@ -18,6 +18,7 @@ namespace MyPaint
         internal DefaultTools defaultTools;
 
         internal List<ShapeAllKinds> ShapesOnCanvas = new List<ShapeAllKinds>();
+        private HashSet<string> loadedPluginNames = new HashSet<string>();
 
         public MainWindow()
         {
@@ -162,7 +163,7 @@ namespace MyPaint
             {
                 Title = "Сохранить как",
                 FileName = "",
-                DefaultExt = ".json", // Можно указать любое расширение
+                DefaultExt = ".json", 
                 Filter = "Graph editor (*.json)|*.json"
             };
 
@@ -189,6 +190,14 @@ namespace MyPaint
             {
                 if (string.IsNullOrEmpty(_.FileName)) return;
 
+                string fileName = System.IO.Path.GetFileName(_.FileName);
+
+                if (loadedPluginNames.Contains(fileName))
+                {
+                    MessageBox.Show("Такой плагин уже загружен", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
                 try
                 {
                     Assembly plugin = Assembly.LoadFrom(_.FileName);
@@ -200,6 +209,7 @@ namespace MyPaint
                         {
                             showTools.defaultTools.ShapesTools.Add(type);
                             showTools.AddOneShapeToTools(showTools.defaultTools.ShapesTools.Count - 1);
+                            loadedPluginNames.Add(fileName);
                         }
                     }
                     

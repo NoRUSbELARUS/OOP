@@ -7,6 +7,7 @@ namespace MyPaint;
 
 internal class EllipseDefault : ShapeAllKinds
 {
+    [JsonProperty]
     private double x1, y1, x2, y2;
 
     [JsonIgnore]
@@ -47,6 +48,7 @@ internal class EllipseDefault : ShapeAllKinds
         }
     }
 
+    [JsonProperty]
     private int strokeThickness;
 
     [JsonIgnore]
@@ -60,6 +62,7 @@ internal class EllipseDefault : ShapeAllKinds
         }
     }
 
+    [JsonProperty]
     private Color fillColor, strokeColor;
 
     [JsonIgnore]

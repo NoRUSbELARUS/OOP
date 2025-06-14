@@ -8,8 +8,10 @@ namespace MyPaint;
 
 internal class PolygonDefault : ShapeAllKinds
 {
+    [JsonProperty]
     private Point[] points;
 
+    [JsonProperty]
     private int strokeThickness;
 
     [JsonIgnore]
@@ -23,6 +25,7 @@ internal class PolygonDefault : ShapeAllKinds
         }
     }
 
+    [JsonProperty]
     private Color fillColor, strokeColor;
 
     [JsonIgnore]

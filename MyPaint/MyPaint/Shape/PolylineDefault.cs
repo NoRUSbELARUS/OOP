@@ -8,8 +8,10 @@ namespace MyPaint;
 
 internal class PolylineDefault : ShapeAllKinds
 {
+    [JsonProperty]
     private Point[] points;
 
+    [JsonProperty]
     private int strokeThickness;
 
     [JsonIgnore]
